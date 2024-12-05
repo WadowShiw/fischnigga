@@ -986,9 +986,7 @@ rod_multiplier:AddToggle("Toggle", {
 misc_sec:AddButton({
     Title = "Nan Money (AUTO WIPE DATA)",
     Description = "",
-    Callback = function()
-        game:GetService("ReplicatedStorage").events.purchase FireServer("Flimsy Rod", "Rod", nil, math.huge)
-        end
+    Callback = game:GetService("ReplicatedStorage").events.purchase FireServer("Flimsy Rod", "Rod", nil, math.huge)
 })
 
 Window:SelectTab(1)
