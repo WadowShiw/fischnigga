@@ -983,12 +983,6 @@ rod_multiplier:AddToggle("Toggle", {
     end
 })
 
-misc_sec:AddButton({
-    Title = "Nan Money (AUTO WIPE DATA)",
-    Description = "",
-    Callback = game:GetService("ReplicatedStorage").events.purchase FireServer("Flimsy Rod", "Rod", nil, math.huge)
-})
-
 Window:SelectTab(1)
 Fluent:Notify({
     Title = "Banyu:",
