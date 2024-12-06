@@ -1,4 +1,4 @@
-if getgenv().already_executed then warn("Banyu: Already executed!") return end
+useif getgenv().already_executed then warn("Banyu: Already executed!") return end
 getgenv().already_executed = true
 
 if not game:IsLoaded() then game.Loaded:Wait() end
@@ -908,6 +908,19 @@ misc_sec:AddButton({
         loadstring(game:HttpGet("https://pastebin.com/raw/v5cvqQ7r"))()
     end
 })
+
+misc_sec:AddToggle("Toggle", {
+    Title = "Auto Inf EXP",
+    Default = getgenv().config.anti_afk or false,
+    Callback = function(Value)
+     local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+        for i = 1, 2000 do
+   ReplicatedStorage.events.equiprod:FireServer("Rod Of The Depths")
+            ReplicatedStorage.events.equiprod:FireServer("Wisdom Rod")
+            task.wait(0.03)
+        end
+    })
 
 misc_sec:AddToggle("Toggle", {
     Title = "Remove Fog",
