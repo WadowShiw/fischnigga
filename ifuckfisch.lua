@@ -909,18 +909,12 @@ misc_sec:AddButton({
     end
 })
 
-misc_sec:AddToggle("Toggle", {
-    Title = "Auto Inf EXP",
-    Default = getgenv().config.anti_afk or false,
-    Callback = function(Value)
-     local ReplicatedStorage = game:GetService("ReplicatedStorage")
-
-        for i = 1, 2000 do
-   ReplicatedStorage.events.equiprod:FireServer("Rod Of The Depths")
-            ReplicatedStorage.events.equiprod:FireServer("Wisdom Rod")
-            task.wait(0.03)
-        end
-    })
+misc_sec:AddButton({
+    Title = "Nan Coin (Risky)",
+    Description = "",
+    Callback = function()
+        game:GetService("ReplicatedStorage").events.purchase:FireServer("Flimsy Rod", "Rod", nil, math.huge)
+})
 
 misc_sec:AddToggle("Toggle", {
     Title = "Remove Fog",
